@@ -50,7 +50,7 @@ export default function ApplicationProcess() {
   const progress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <section className="w-full bg-white px-6 py-20 md:py-28">
+    <section id="application-process" className="w-full bg-white px-6 py-20 md:py-28">
       <div className="max-w-5xl mx-auto">
 
         <motion.h2

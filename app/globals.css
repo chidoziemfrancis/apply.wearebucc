@@ -29,6 +29,10 @@
   --font-sans: "General Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #ffffff;
   color: #171717;

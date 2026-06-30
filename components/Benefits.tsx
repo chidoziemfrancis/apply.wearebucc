@@ -53,7 +53,7 @@ const fadeUp = {
 
 export default function Benefits() {
   return (
-    <section className="w-full bg-white px-6 py-20 md:py-28">
+    <section id="benefits" className="w-full bg-white px-6 py-20 md:py-28">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}

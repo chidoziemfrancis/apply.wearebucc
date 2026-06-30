@@ -44,7 +44,7 @@ const fadeUp = {
 
 export default function Committees() {
   return (
-    <section className="w-full bg-[#FFFDF2] px-6 py-20 md:py-28">
+    <section id="committees" className="w-full bg-[#FFFDF2] px-6 py-20 md:py-28">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20">
 
         {/* Left — heading */}

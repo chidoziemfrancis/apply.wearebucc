@@ -20,7 +20,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="w-full overflow-hidden bg-white flex flex-col items-center justify-center text-center px-6 py-24 md:py-36">
+    <section id="overview" className="w-full overflow-hidden bg-white flex flex-col items-center justify-center text-center px-6 py-24 md:py-36">
 
       {/* Badge */}
       <motion.div
@@ -66,7 +66,7 @@ export default function Hero() {
         className="mt-10"
       >
         <Link
-          href="#roles"
+          href="#committees"
           className="inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold rounded-full shadow-[0px_4px_0px_0px_rgba(0,0,0,0.8)] hover:brightness-95 transition-all text-xs px-5 py-2.5 md:text-sm md:px-8 md:py-4"
         >
           View open roles
