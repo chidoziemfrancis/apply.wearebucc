@@ -86,6 +86,8 @@ export default function Hero() {
               src={img.src}
               alt={img.alt}
               fill
+              priority
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
           </div>
@@ -114,6 +116,8 @@ export default function Hero() {
                 src={img.src}
                 alt={img.alt}
                 fill
+                priority
+                sizes="50vw"
                 className="object-cover"
               />
             </div>
