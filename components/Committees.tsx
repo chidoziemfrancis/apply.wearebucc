@@ -55,7 +55,7 @@ export default function Committees() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="md:w-64 shrink-0"
         >
-          <h2 className="text-2xl md:text-4xl font-bold text-black mb-4">Open Committees</h2>
+          <h2 className="text-[28px]  md:text-4xl font-bold text-black mb-4">Open Committees</h2>
           <p className="text-sm text-gray-500 leading-relaxed">
             Explore all available committees to identify the one that best aligns with your skills and interests.
           </p>

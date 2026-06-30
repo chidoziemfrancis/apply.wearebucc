@@ -13,10 +13,10 @@ export default function CTA() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-2xl mx-auto flex flex-col items-center text-center"
       >
-        <h2 className="text-3xl md:text-5xl font-bold text-black">
+        <h2 className="text-[26px]  md:text-5xl font-bold text-black">
           Applications are now open
         </h2>
-        <p className="mt-4 text-base md:text-lg text-gray-500 max-w-md leading-relaxed">
+        <p className="mt-4 text-sm md:text-lg text-gray-500 max-w-md leading-relaxed">
           Join a community of students dedicated to service, leadership,
           creativity, and growth.
         </p>

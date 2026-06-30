@@ -58,7 +58,7 @@ export default function ApplicationProcess() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-2xl md:text-4xl font-bold text-black mb-14"
+          className="text-[28px] md:text-4xl font-bold text-black mb-14"
         >
           Application Process
         </motion.h2>

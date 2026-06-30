@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="mt-12 text-center text-sm text-gray-500">
+        <p className="mt-12 text-center font-medium text-sm text-gray-500">
           © 2026 BUCC · Babcock University
         </p>
       </div>
