@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="w-full bg-white px-6 py-24 md:py-32 border-t border-gray-200">
+    <section className="w-full bg-white px-6 py-24 md:py-32">
+      <div className="max-w-5xl mx-auto border-t border-[#E7E7E7] pt-24 md:pt-32">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -27,6 +28,7 @@ export default function CTA() {
           Open roles
         </Link>
       </motion.div>
+      </div>
     </section>
   );
 }
