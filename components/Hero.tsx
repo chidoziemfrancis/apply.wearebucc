@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const images = [
   { src: "/sport.jpg", alt: "BUCC sports event", aspect: "aspect-3/4", slideW: "w-52" },
-  { src: "/btw.png", alt: "BUCC group photo", aspect: "aspect-4/3", slideW: "w-80" },
-  { src: "/tradition.png", alt: "BUCC cultural event", aspect: "aspect-3/4", slideW: "w-52" },
+  { src: "/btw.jpg", alt: "BUCC group photo", aspect: "aspect-4/3", slideW: "w-80" },
+  { src: "/tradition.jpg", alt: "BUCC cultural event", aspect: "aspect-3/4", slideW: "w-52" },
 ];
 
 const fadeUp: Variants = {
