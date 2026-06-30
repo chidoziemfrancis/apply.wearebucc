@@ -79,7 +79,7 @@ export default function Hero() {
         initial="hidden"
         animate="show"
         custom={0.6}
-        className="mt-16 w-full max-w-5xl grid grid-cols-[1fr_1.5fr_1fr] gap-4 items-center"
+        className="mt-16 w-full max-w-5xl grid grid-cols-[1fr_1.5fr_1fr] gap-4 items-start"
       >
         {images.map((img) => (
           <div key={img.src} className={`relative w-full ${img.aspect} rounded-2xl overflow-hidden`}>
