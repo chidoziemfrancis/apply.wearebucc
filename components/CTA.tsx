@@ -21,12 +21,12 @@ export default function CTA() {
           Join a community of students dedicated to service, leadership,
           creativity, and growth.
         </p>
-        <Link
-          href="#committees"
+        <button
+          onClick={() => document.getElementById("committees")?.scrollIntoView({ behavior: "smooth" })}
           className="mt-10 inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold rounded-full shadow-[0px_4px_0px_0px_rgba(0,0,0,0.8)] hover:brightness-95 transition-all text-xs px-5 py-2.5 md:text-sm md:px-8 md:py-4"
         >
           Open roles
-        </Link>
+        </button>
       </motion.div>
       </div>
     </section>
