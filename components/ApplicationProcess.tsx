@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
+import ApplicationIllustration from "./ApplicationIllustration";
 
 const steps = [
   {
@@ -25,38 +26,29 @@ const steps = [
 ];
 
 function StepItem({ step, index }: { step: (typeof steps)[0]; index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-20% 0px -20% 0px" });
-
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, x: -16 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-      className="flex gap-6"
+      className="pl-6"
     >
-      {/* Animated left border */}
-      <div className="relative w-0.75 shrink-0 bg-gray-200 rounded-full">
-        <motion.div
-          className="absolute top-0 left-0 w-full rounded-full bg-[#A11312]"
-          animate={{ height: isInView ? "100%" : "0%" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        />
-      </div>
-
-      {/* Content */}
-      <div className="pb-14">
-        <p className="text-xs text-gray-400 font-medium mb-2 tracking-widest">{step.step}</p>
-        <h3 className="text-xl md:text-2xl font-semibold text-black mb-3">{step.title}</h3>
-        <p className="text-sm text-gray-500 leading-relaxed max-w-sm">{step.description}</p>
-      </div>
+      <p className="text-xs text-gray-400 font-medium mb-2 tracking-widest">{step.step}</p>
+      <h3 className="text-xl md:text-2xl font-semibold text-black mb-3">{step.title}</h3>
+      <p className="text-sm text-gray-500 leading-relaxed max-w-sm">{step.description}</p>
     </motion.div>
   );
 }
 
 export default function ApplicationProcess() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 70%", "end 75%"],
+  });
+  const progress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
   return (
     <section className="w-full bg-white px-6 py-20 md:py-28">
       <div className="max-w-5xl mx-auto">
@@ -71,10 +63,26 @@ export default function ApplicationProcess() {
           Application Process
         </motion.h2>
 
-        <div className="flex flex-col gap-6">
-          {steps.map((step, i) => (
-            <StepItem key={step.step} step={step} index={i} />
-          ))}
+        <div className="grid items-center gap-16 md:grid-cols-2 md:gap-24">
+          {/* Steps with one continuous, scroll-driven timeline */}
+          <div ref={timelineRef} className="relative flex flex-col gap-12">
+            {/* Gray track */}
+            <div className="absolute left-0 top-0 bottom-0 w-0.75 rounded-full bg-gray-200" />
+            {/* Red progress fill — grows with scroll */}
+            <motion.div
+              style={{ scaleY: progress }}
+              className="absolute left-0 top-0 bottom-0 w-0.75 origin-top rounded-full bg-[#A11312]"
+            />
+
+            {steps.map((step, i) => (
+              <StepItem key={step.step} step={step} index={i} />
+            ))}
+          </div>
+
+          {/* Illustration */}
+          <div className="order-first md:order-last">
+            <ApplicationIllustration />
+          </div>
         </div>
 
       </div>
