@@ -1,0 +1,53 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+
+const navLinks = [
+  { label: "Overview", href: "#overview" },
+  { label: "Benefits", href: "#benefits" },
+  { label: "Committees", href: "#committees" },
+  { label: "Application Process", href: "#application-process" },
+];
+
+export default function Navbar() {
+  return (
+    <nav className="w-full bg-white border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center shrink-0">
+          <Image
+            src="/BUCCLogo.png"
+            alt="BUCC Logo"
+            width={48}
+            height={48}
+            priority
+          />
+        </Link>
+
+        {/* Desktop nav links */}
+        <ul className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="text-sm text-gray-700 hover:text-black transition-colors"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Apply now button — visible on all screen sizes */}
+        <Link
+          href="#apply"
+          className="bg-black text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors"
+        >
+          Apply now
+        </Link>
+      </div>
+    </nav>
+  );
+}
