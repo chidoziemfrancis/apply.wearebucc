@@ -36,24 +36,28 @@ export default function Committees() {
         <div className="flex-1 flex flex-col gap-3">
           {committees.map((c, i) => (
             <motion.div
-              key={c.name}
+              key={c.slug}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
               custom={i}
-              className="flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-6 py-5 cursor-pointer hover:border-black transition-colors group"
             >
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">{c.name}</h3>
-                <p className="text-xs md:text-sm text-gray-500">{c.description}</p>
-              </div>
-              <span className="ml-4 shrink-0 text-gray-400 group-hover:text-black transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </span>
+              <Link
+                href={`/committees/${c.slug}`}
+                className="flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-6 py-5 hover:border-black transition-colors group"
+              >
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{c.name}</h3>
+                  <p className="text-xs md:text-sm text-gray-500">{c.description}</p>
+                </div>
+                <span className="ml-4 shrink-0 text-gray-400 group-hover:text-black transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </span>
+              </Link>
             </motion.div>
           ))}
         </div>
