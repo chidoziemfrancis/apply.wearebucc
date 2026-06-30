@@ -75,7 +75,7 @@ export default function Committees() {
             >
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">{c.name}</h3>
-                <p className="text-sm text-gray-500">{c.description}</p>
+                <p className="text-xs md:text-sm text-gray-500">{c.description}</p>
               </div>
               <span className="ml-4 shrink-0 text-gray-400 group-hover:text-black transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
