@@ -1,0 +1,32 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+export default function CTA() {
+  return (
+    <section className="w-full bg-white px-6 py-24 md:py-32">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="max-w-2xl mx-auto flex flex-col items-center text-center"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-black">
+          Applications are now open
+        </h2>
+        <p className="mt-4 text-base md:text-lg text-gray-500 max-w-md leading-relaxed">
+          Join a community of students dedicated to service, leadership,
+          creativity, and growth.
+        </p>
+        <Link
+          href="#roles"
+          className="mt-10 inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold rounded-full shadow-[0px_4px_0px_0px_rgba(0,0,0,0.8)] hover:brightness-95 transition-all text-xs px-5 py-2.5 md:text-sm md:px-8 md:py-4"
+        >
+          Open roles
+        </Link>
+      </motion.div>
+    </section>
+  );
+}
