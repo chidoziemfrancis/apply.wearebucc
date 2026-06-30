@@ -80,12 +80,31 @@ export default function CommitteeDetail({ committee }: { committee: Committee })
             <p className="mb-6 max-w-md text-sm text-gray-500 leading-relaxed">
               {committee.experienceDescription}
             </p>
-            <div className="grid grid-cols-3 gap-3 md:gap-4">
+            {/* Desktop grid */}
+            <div className="hidden md:grid grid-cols-3 gap-4">
               {detailImages.map((src) => (
                 <div key={src} className="relative aspect-4/3 rounded-2xl overflow-hidden">
                   <Image src={src} alt={committee.name} fill className="object-cover" />
                 </div>
               ))}
+            </div>
+
+            {/* Mobile auto-scrolling slider */}
+            <div className="md:hidden -mx-6 overflow-hidden">
+              <motion.div
+                className="flex gap-3 w-max px-6"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ duration: 16, ease: "linear", repeat: Infinity }}
+              >
+                {[...detailImages, ...detailImages].map((src, i) => (
+                  <div
+                    key={`${src}-${i}`}
+                    className="relative h-32 w-44 shrink-0 rounded-2xl overflow-hidden"
+                  >
+                    <Image src={src} alt={committee.name} fill className="object-cover" />
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </motion.div>
 
