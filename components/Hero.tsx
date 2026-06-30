@@ -1,6 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+
+const images = [
+  { src: "/sport.jpg", alt: "BUCC sports event" },
+  { src: "/btw.png", alt: "BUCC group photo" },
+  { src: "/tradition.png", alt: "BUCC cultural event" },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -64,6 +71,26 @@ export default function Hero() {
         >
           View open roles
         </Link>
+      </motion.div>
+
+      {/* Images grid */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
+        custom={0.6}
+        className="mt-16 w-full max-w-5xl grid grid-cols-[1fr_1.5fr_1fr] gap-4"
+      >
+        {images.map((img) => (
+          <div key={img.src} className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ))}
       </motion.div>
 
     </section>
