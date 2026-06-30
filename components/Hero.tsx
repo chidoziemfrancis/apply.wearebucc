@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
 const images = [
@@ -8,7 +8,7 @@ const images = [
   { src: "/tradition.png", alt: "BUCC cultural event", aspect: "aspect-3/4", slideW: "w-52" },
 ];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: (delay: number) => ({
     opacity: 1,

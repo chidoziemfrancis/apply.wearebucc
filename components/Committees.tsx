@@ -1,39 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import Link from "next/link";
+import { committees } from "@/lib/committees";
 
-const committees = [
-  {
-    name: "Academics Committee",
-    description: "Support study programs, workshops, and educational events.",
-  },
-  {
-    name: "Debate Committee",
-    description: "Participate in discussions, debates, and training sessions.",
-  },
-  {
-    name: "Development Committee",
-    description: "Working with other committees to deliver technology driven solutions.",
-  },
-  {
-    name: "Chaplaincy Committee",
-    description: "Fostering the spiritual wellbeing of the BUCC community.",
-  },
-  {
-    name: "Welfare Committee",
-    description: "Coordinating welfare programs, offering assistance during BUCC events.",
-  },
-  {
-    name: "Social Committee",
-    description: "Planning and executing social events and community gatherings.",
-  },
-  {
-    name: "Media Committee",
-    description: "Capture, create, and communicate the stories that shape BUCC experience.",
-  },
-];
-
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: (i: number) => ({
     opacity: 1,
