@@ -32,7 +32,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm text-gray-700 hover:text-black transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
               >
                 {link.label}
               </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* Apply now button — visible on all screen sizes */}
         <Link
           href="#apply"
-          className="bg-black text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors"
+          className="bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors text-xs px-3 h-8 flex items-center md:text-sm md:px-5 md:h-10"
         >
           Apply now
         </Link>
