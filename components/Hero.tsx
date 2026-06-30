@@ -21,10 +21,10 @@ export default function Hero() {
         initial="hidden"
         animate="show"
         custom={0}
-        className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 mb-8 shadow-sm"
+        className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 md:px-4 md:py-1.5 mb-8 shadow-sm"
       >
-        <span className="w-2.5 h-2.5 rounded-full bg-[#A11312] shrink-0" />
-        <span className="text-sm text-gray-700 font-medium">2026 Applications are now open</span>
+        <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#A11312] shrink-0" />
+        <span className="text-xs md:text-sm text-gray-700 font-medium">2026 Applications are now open</span>
       </motion.div>
 
       {/* Heading */}
@@ -33,7 +33,7 @@ export default function Hero() {
         initial="hidden"
         animate="show"
         custom={0.15}
-        className="text-5xl md:text-7xl font-bold text-black leading-tight tracking-tight max-w-3xl"
+        className="text-4xl md:text-7xl font-bold text-black leading-tight tracking-tight max-w-3xl"
       >
         Shape the future of BUCC together.
       </motion.h1>
@@ -60,7 +60,7 @@ export default function Hero() {
       >
         <Link
           href="#roles"
-          className="inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold text-sm px-8 py-4 rounded-full shadow-[0px_4px_0px_0px_rgba(0,0,0,0.8)] hover:brightness-95 transition-all"
+          className="inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold rounded-full shadow-[0px_4px_0px_0px_rgba(0,0,0,0.8)] hover:brightness-95 transition-all text-xs px-5 py-2.5 md:text-sm md:px-8 md:py-4"
         >
           View open roles
         </Link>
