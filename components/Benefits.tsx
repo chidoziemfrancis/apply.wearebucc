@@ -113,7 +113,7 @@ export default function Benefits() {
               viewport={{ once: true }}
               custom={i}
               style={{ backgroundColor: b.bg }}
-              className="rounded-2xl p-6 flex flex-col gap-4"
+              className="rounded-2xl p-6 flex flex-col gap-4 border border-black/10"
             >
               <span className="text-gray-700">{b.icon}</span>
               <div>
