@@ -38,7 +38,7 @@ function StepItem({ step, index }: { step: (typeof steps)[0]; index: number }) {
       className="flex gap-6"
     >
       {/* Animated left border */}
-      <div className="relative w-[3px] shrink-0 bg-gray-200 rounded-full">
+      <div className="relative w-0.75 shrink-0 bg-gray-200 rounded-full">
         <motion.div
           className="absolute top-0 left-0 w-full rounded-full bg-[#A11312]"
           animate={{ height: isInView ? "100%" : "0%" }}
@@ -49,7 +49,7 @@ function StepItem({ step, index }: { step: (typeof steps)[0]; index: number }) {
       {/* Content */}
       <div className="pb-14">
         <p className="text-xs text-gray-400 font-medium mb-2 tracking-widest">{step.step}</p>
-        <h3 className="text-xl md:text-2xl font-bold text-black mb-3">{step.title}</h3>
+        <h3 className="text-xl md:text-2xl font-semibold text-black mb-3">{step.title}</h3>
         <p className="text-sm text-gray-500 leading-relaxed max-w-sm">{step.description}</p>
       </div>
     </motion.div>
