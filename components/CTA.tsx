@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="w-full bg-white px-6 py-24 md:py-32">
+    <section className="w-full bg-white px-6 py-24 md:py-32 border-t border-gray-200">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

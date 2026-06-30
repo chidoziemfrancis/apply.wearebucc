@@ -4,11 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Overview", href: "#overview" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "Committees", href: "#committees" },
-  { label: "Application Process", href: "#application-process" },
+  { label: "Overview", href: "overview" },
+  { label: "Benefits", href: "benefits" },
+  { label: "Committees", href: "committees" },
+  { label: "Application Process", href: "application-process" },
 ];
+
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Navbar() {
   return (
@@ -30,23 +34,23 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
+              <button
+                onClick={() => scrollTo(link.href)}
                 className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
               >
                 {link.label}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
 
-        {/* Apply now button — visible on all screen sizes */}
-        <Link
-          href="#committees"
+        {/* Apply now button */}
+        <button
+          onClick={() => scrollTo("committees")}
           className="bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors text-xs px-3 h-8 flex items-center md:text-sm md:px-5 md:h-10"
         >
           Apply now
-        </Link>
+        </button>
       </div>
     </nav>
   );
