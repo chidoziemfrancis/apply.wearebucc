@@ -81,7 +81,7 @@ export default function Benefits() {
               style={{ backgroundColor: b.bg }}
               className="rounded-2xl p-6 flex flex-col gap-4 border border-black"
             >
-              <Image src={b.icon} alt={b.title} width={28} height={28} />
+              <Image src={b.icon} alt={b.title} width={20} height={20} />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{b.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{b.description}</p>
