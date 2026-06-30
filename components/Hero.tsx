@@ -20,7 +20,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="w-full bg-white flex flex-col items-center justify-center text-center px-6 py-24 md:py-36">
+    <section className="w-full overflow-hidden bg-white flex flex-col items-center justify-center text-center px-6 py-24 md:py-36">
 
       {/* Badge */}
       <motion.div
@@ -73,13 +73,13 @@ export default function Hero() {
         </Link>
       </motion.div>
 
-      {/* Images grid */}
+      {/* Images — desktop grid */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
         animate="show"
         custom={0.6}
-        className="mt-16 w-full max-w-5xl grid grid-cols-[1fr_1.5fr_1fr] gap-4 items-start"
+        className="hidden md:grid mt-16 w-full max-w-5xl grid-cols-[1fr_1.5fr_1fr] gap-4 items-start"
       >
         {images.map((img) => (
           <div key={img.src} className={`relative w-full ${img.aspect} rounded-2xl overflow-hidden`}>
@@ -91,6 +91,35 @@ export default function Hero() {
             />
           </div>
         ))}
+      </motion.div>
+
+      {/* Images — mobile auto-scrolling slider */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
+        custom={0.6}
+        className="md:hidden mt-12 w-screen overflow-hidden"
+      >
+        <motion.div
+          className="flex gap-4 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 18, ease: "linear", repeat: Infinity }}
+        >
+          {[...images, ...images].map((img, i) => (
+            <div
+              key={`${img.src}-${i}`}
+              className="relative h-64 w-52 shrink-0 rounded-2xl overflow-hidden"
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
 
     </section>
