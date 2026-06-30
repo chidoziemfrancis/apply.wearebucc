@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const images = [
-  { src: "/sport.jpg", alt: "BUCC sports event" },
-  { src: "/btw.png", alt: "BUCC group photo" },
-  { src: "/tradition.png", alt: "BUCC cultural event" },
+  { src: "/sport.jpg", alt: "BUCC sports event", aspect: "aspect-3/4" },
+  { src: "/btw.png", alt: "BUCC group photo", aspect: "aspect-4/3" },
+  { src: "/tradition.png", alt: "BUCC cultural event", aspect: "aspect-3/4" },
 ];
 
 const fadeUp = {
@@ -79,10 +79,10 @@ export default function Hero() {
         initial="hidden"
         animate="show"
         custom={0.6}
-        className="mt-16 w-full max-w-5xl grid grid-cols-[1fr_1.5fr_1fr] gap-4"
+        className="mt-16 w-full max-w-5xl grid grid-cols-[1fr_1.5fr_1fr] gap-4 items-center"
       >
         {images.map((img) => (
-          <div key={img.src} className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
+          <div key={img.src} className={`relative w-full ${img.aspect} rounded-2xl overflow-hidden`}>
             <Image
               src={img.src}
               alt={img.alt}
