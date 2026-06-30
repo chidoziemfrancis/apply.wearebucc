@@ -45,11 +45,11 @@ export default function Committees() {
             >
               <Link
                 href={`/committees/${c.slug}`}
-                className="flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-6 py-5 hover:border-black transition-colors group"
+                className="flex items-center justify-between bg-white border-2 border-black rounded-2xl px-6 py-5 hover:bg-[#ECCA0A] shadow-[3px_3px_0px_0px_rgba(0,0,0,0.85)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,0.85)] transition-all group"
               >
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">{c.name}</h3>
-                  <p className="text-xs md:text-sm text-gray-500">{c.description}</p>
+                  <p className="text-xs md:text-sm text-gray-500 group-hover:text-gray-700 transition-colors">{c.description}</p>
                 </div>
                 <span className="ml-4 shrink-0 text-gray-400 group-hover:text-black transition-colors">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

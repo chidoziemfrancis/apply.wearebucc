@@ -84,7 +84,7 @@ export default function CommitteeDetail({ committee }: { committee: Committee })
             <div className="hidden md:grid grid-cols-3 gap-4">
               {detailImages.map((src) => (
                 <div key={src} className="relative aspect-4/3 rounded-2xl overflow-hidden">
-                  <Image src={src} alt={committee.name} fill className="object-cover" />
+                  <Image src={src} alt={committee.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
                 </div>
               ))}
             </div>
@@ -101,7 +101,7 @@ export default function CommitteeDetail({ committee }: { committee: Committee })
                     key={`${src}-${i}`}
                     className="relative h-32 w-44 shrink-0 rounded-2xl overflow-hidden"
                   >
-                    <Image src={src} alt={committee.name} fill className="object-cover" />
+                    <Image src={src} alt={committee.name} fill sizes="176px" className="object-cover" />
                   </div>
                 ))}
               </motion.div>

@@ -1,20 +1,14 @@
 export type Committee = {
   slug: string;
   name: string;
-  // Short summary shown on the listing cards
   description: string;
-  // Subtitle under the title on the detail page
   intro: string;
-  // "About this role" paragraph
   about: string;
-  // "What you'll be doing" bullet list
   responsibilities: string[];
-  // Sub-section heading + description above the image gallery
   experienceTitle: string;
   experienceDescription: string;
 };
 
-// Shared gallery images used on each committee detail page
 export const detailImages = [
   "/media/081b6016516826ee61d0a08a1984f3587e4ceca0.jpg",
   "/media/2e631b7ad6c3e010a6c35d2385a38a6ef0687319.jpg",
