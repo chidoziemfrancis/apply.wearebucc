@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -61,7 +60,7 @@ export default function Hero() {
       >
         <Link
           href="#roles"
-          className="inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold text-sm px-8 py-4 rounded-full hover:brightness-95 transition-all"
+          className="inline-flex items-center justify-center bg-[#ECCA0A] text-black font-semibold text-sm px-8 py-4 rounded-full shadow-[0px_4px_0px_0px_rgba(0,0,0,0.8)] hover:brightness-95 transition-all"
         >
           View open roles
         </Link>
