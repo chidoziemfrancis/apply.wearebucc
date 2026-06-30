@@ -71,7 +71,7 @@ export default function ApplicationProcess() {
           Application Process
         </motion.h2>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-6">
           {steps.map((step, i) => (
             <StepItem key={step.step} step={step} index={i} />
           ))}
